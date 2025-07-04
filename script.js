@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api';
+const API = '/api';
 let username = localStorage.getItem('circle_username') || '';
 
 // --- Dark mode toggle ---

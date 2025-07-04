@@ -1,3 +1,4 @@
+// This file is for local development only. For Vercel deployment, use the /api/*.js serverless functions.
 const express = require('express');
 const cors = require('cors');
 const { MongoClient } = require('mongodb');
