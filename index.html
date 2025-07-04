@@ -26,25 +26,7 @@
     <div id="challengeBanner" style="display:none;"></div>
     <h1><span style="background: linear-gradient(90deg,#4e54c8,#8f94fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Draw a Circle!</span></h1>
     <div class="game-area">
-      <div style="display:flex;gap:16px;margin-bottom:10px;align-items:center;">
-        <label for="canvasSize" style="font-size:1em;">Size:</label>
-        <select id="canvasSize">
-          <option value="320">Medium</option>
-          <option value="220">Small</option>
-          <option value="420">Large</option>
-        </select>
-        <label for="canvasTheme" style="font-size:1em;margin-left:12px;">Theme:</label>
-        <select id="canvasTheme">
-          <option value="default">Default</option>
-          <option value="gradient1">Sunset Gradient</option>
-          <option value="gradient2">Ocean Gradient</option>
-          <option value="pattern1">Dots Pattern</option>
-        </select>
-      </div>
-      <div id="progressRingContainer" style="position:relative;display:inline-block;">
-        <canvas id="drawCanvas" width="320" height="320"></canvas>
-        <svg id="progressRing" width="340" height="340" style="position:absolute;left:-10px;top:-10px;pointer-events:none;"></svg>
-      </div>
+      <canvas id="drawCanvas" width="320" height="320"></canvas>
       <div id="result"><span id="resultPercent"></span></div>
       <button id="submitBtn">Submit</button>
       <button id="shareBtn" style="display:none;margin-top:8px;">Share</button>
