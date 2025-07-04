@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Draw a Circle Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="darkModeToggle" title="Toggle dark mode" style="position:fixed;top:18px;right:24px;z-index:101;font-size:1.6em;background:none;border:none;cursor:pointer;">🌙</button>
+  <div id="usernameModal" class="modal">
+    <div class="modal-content">
+      <h2>Enter your username</h2>
+      <input type="text" id="usernameInput" maxlength="20" />
+      <div style="margin:12px 0 18px 0;">
+        <label style="font-size:1em;">Pick your avatar: </label>
+        <select id="avatarEmoji" style="font-size:1.2em;">
+          <option>😀</option><option>😎</option><option>🦄</option><option>🐱</option><option>🐶</option><option>🐼</option><option>🦊</option><option>🐸</option><option>👾</option><option>🌈</option><option>⚡</option><option>🔥</option><option>🍀</option><option>🍕</option><option>🎨</option><option>🚀</option>
+        </select>
+        <input type="color" id="avatarColor" value="#a1c4fd" style="width:32px;height:32px;border:none;margin-left:8px;vertical-align:middle;">
+      </div>
+      <button id="usernameBtn">Start</button>
+    </div>
+  </div>
+  <div class="container">
+    <div id="challengeBanner" style="display:none;"></div>
+    <h1><span style="background: linear-gradient(90deg,#4e54c8,#8f94fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Draw a Circle!</span></h1>
+    <div class="game-area">
+      <div style="display:flex;gap:16px;margin-bottom:10px;align-items:center;">
+        <label for="canvasSize" style="font-size:1em;">Size:</label>
+        <select id="canvasSize">
+          <option value="320">Medium</option>
+          <option value="220">Small</option>
+          <option value="420">Large</option>
+        </select>
+        <label for="canvasTheme" style="font-size:1em;margin-left:12px;">Theme:</label>
+        <select id="canvasTheme">
+          <option value="default">Default</option>
+          <option value="gradient1">Sunset Gradient</option>
+          <option value="gradient2">Ocean Gradient</option>
+          <option value="pattern1">Dots Pattern</option>
+        </select>
+      </div>
+      <div id="progressRingContainer" style="position:relative;display:inline-block;">
+        <canvas id="drawCanvas" width="320" height="320"></canvas>
+        <svg id="progressRing" width="340" height="340" style="position:absolute;left:-10px;top:-10px;pointer-events:none;"></svg>
+      </div>
+      <div id="result"><span id="resultPercent"></span></div>
+      <button id="submitBtn">Submit</button>
+      <button id="shareBtn" style="display:none;margin-top:8px;">Share</button>
+      <button id="challengeBtn" style="display:none;margin-top:8px;">Challenge a Friend</button>
+    </div>
+    <div class="side-by-side">
+      <div class="history">
+        <h2>Your History</h2>
+        <ul id="historyList"></ul>
+      </div>
+      <div class="leaderboard">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboardList"></ol>
+      </div>
+    </div>
+  </div>
+  <button id="helpBtn" title="Help" style="position:fixed;bottom:24px;right:24px;z-index:101;font-size:1.7em;background:#fff3;border-radius:50%;width:48px;height:48px;border:none;box-shadow:0 2px 8px #0002;cursor:pointer;">?</button>
+  <div id="helpModal" class="modal" style="display:none;">
+    <div class="modal-content" style="max-width:420px;">
+      <h2>How to Play</h2>
+      <ul style="text-align:left;font-size:1.1em;line-height:1.5;">
+        <li>Draw a freehand circle as close to perfect as you can.</li>
+        <li>See your live score and a ghost preview as you draw.</li>
+        <li>After submitting, see your best-fit circle and get instant feedback!</li>
+        <li>High scores trigger confetti and fun emojis.</li>
+        <li>Check your history and the global leaderboard below.</li>
+        <li>Pick your avatar and color for the leaderboard.</li>
+        <li>Toggle dark mode for a different vibe.</li>
+        <li>Share your best score with friends!</li>
+      </ul>
+      <button id="closeHelpBtn" style="margin-top:18px;">Close</button>
+    </div>
+  </div>
+  <audio id="soundSubmit" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae7b2.mp3" preload="auto"></audio>
+  <audio id="soundConfetti" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae7b2.mp3" preload="auto"></audio>
+  <audio id="soundHighscore" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae7b2.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
